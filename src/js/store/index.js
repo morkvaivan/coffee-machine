@@ -1,0 +1,18 @@
+import {
+  createStore,
+  applyMiddleware,
+} from 'redux';
+
+import promiseMiddleware from 'redux-promise-middleware';
+import createLogger from 'redux-logger';
+import thunk from 'redux-thunk';
+
+import reducers from '../reducers/index';
+
+const logger = createLogger();
+
+export default (initialState) => createStore(
+  reducers,
+  initialState,
+  applyMiddleware(thunk, promiseMiddleware(), logger)
+);
