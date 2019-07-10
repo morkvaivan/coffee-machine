@@ -1,1 +1,1 @@
-# like-coffee-machine
+coffee-machine
